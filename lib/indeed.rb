@@ -79,9 +79,8 @@ class Indeed
     if error = data["error"]
       raise IndeedError, error
     end
-    result = IndeedResult.new(data["results"], data["totalResults"])
-
-    return result
+    
+    IndeedResult.new(data["results"], data["totalResults"] || data['totalresults'])
   end
 
 
