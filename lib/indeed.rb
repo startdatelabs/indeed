@@ -105,11 +105,12 @@ end
 
 class IndeedResult < Array
 
-  attr_accessor :totalResults
+  attr_reader :totalResults
+  alias_method :total, :totalResults
 
   def initialize(array, total)
     super(array)
-    self.totalResults = total
+    @totalResults = total
   end
 end
 
